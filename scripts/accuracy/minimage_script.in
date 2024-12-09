@@ -1,0 +1,5 @@
+parm force_field/box_kcl/solvated_box.prmtop
+trajin minimization/equil/equil.nc
+autoimage
+minimage minimization/equil/equil.nc ^1-10 ^1-10 out output/output_min_distance.xvg 
+run

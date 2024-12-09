@@ -1,0 +1,6 @@
+parm force_field/box_kcl/solvated_box.prmtop
+trajin minimization/min_2/min_2.ncrst
+trajout minimization/min_2/min_2.pdb pdb
+strip :WAT,K+,Na+,Cl- parmout trajectory/min_2/min_2.prmtop
+autoimage
+run

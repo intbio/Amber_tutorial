@@ -1,0 +1,74 @@
+
+CPPTRAJ: Trajectory Analysis. V6.24.0 (AmberTools)
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 12/07/24 10:48:56
+| Available memory: 208.802 GB
+
+INPUT: Reading input from 'scripts/accuracy/minimage_script.in'
+  [parm force_field/box_kcl/solvated_box.prmtop]
+	Reading 'force_field/box_kcl/solvated_box.prmtop' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin minimization/equil/equil.nc]
+	Reading 'minimization/equil/equil.nc' as Amber NetCDF
+  [autoimage]
+    AUTOIMAGE: To box center based on center of mass, anchor is first molecule.
+  [minimage minimization/equil/equil.nc ^1-10 ^1-10 out output/output_min_distance.xvg]
+    MINIMAGE: Looking for closest approach of atoms in ^1-10
+	to images of atoms in ^1-10
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: solvated_box.prmtop, 384974 atoms, 91606 res, box: Truncated octahedron, 90348 mol, 89850 solvent
+
+INPUT TRAJECTORIES (1 total):
+ 0: 'equil.nc' is a NetCDF (NetCDF3) AMBER trajectory with coordinates, time, box, Parm solvated_box.prmtop (Truncated octahedron box) (reading 20 of 20)
+  Coordinate processing will occur on 20 frames.
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'solvated_box.prmtop' (2 actions):
+  0: [autoimage]
+	Original box is truncated octahedron, turning on 'familiar'.
+	Using first molecule as anchor.
+	9 molecules are fixed to anchor: 2 3 4 5 6 7 8 9 10
+	90338 molecules are mobile.
+  1: [minimage minimization/equil/equil.nc ^1-10 ^1-10 out output/output_min_distance.xvg]
+	^1-10 (25086 atoms) to ^1-10 (25086 atoms)
+----- equil.nc (1-20, 1) -----
+ 0% 11% 21% 32% 42% 53% 63% 74% 84% 95% 100% Complete.
+
+Read 20 frames and processed 20 frames.
+TIME: Avg. throughput= 0.0232 frames / second.
+
+ACTION OUTPUT:
+TIME: Analyses took 0.0000 seconds.
+
+DATASETS (3 total):
+	minimization/equil/equil.nc "minimization/equil/equil.nc" (double, distance), size is 20 (0.160 kB)
+	minimization/equil/equil.nc[A1] "minimization/equil/equil.nc[A1]" (integer, distance), size is 20 (0.080 kB)
+	minimization/equil/equil.nc[A2] "minimization/equil/equil.nc[A2]" (integer, distance), size is 20 (0.080 kB)
+    Total data set memory usage is at least 0.320 kB
+
+DATAFILES (1 total):
+  output_min_distance.xvg (Standard Data File):  minimization/equil/equil.nc minimization/equil/equil.nc[A1] minimization/equil/equil.nc[A2]
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 863.1221 s ( 99.98%)
+TIME:		Action Post        : 0.0000 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.1729 s (  0.02%)
+TIME:		Other              : 0.0017 s (  0.00%)
+TIME:	Run Total 863.2967 s
+---------- RUN END ---------------------------------------------------
+TIME: Total execution time: 863.8314 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
