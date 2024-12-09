@@ -1,0 +1,6 @@
+parm force_field/box_kcl/solvated_box.prmtop
+trajin minimization/equil/equil.ncrst
+trajout minimization/equil/equil.pdb pdb
+strip :WAT,K+,Na+,Cl- parmout trajectory/equil/equil.prmtop
+autoimage
+run

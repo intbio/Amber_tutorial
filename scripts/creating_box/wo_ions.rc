@@ -1,0 +1,12 @@
+source leaprc.protein.ff19SB
+source leaprc.DNA.bsc1
+source leaprc.water.opc
+
+mol = loadPDB prep/sys_mod.pdb
+setBox mol vdw
+solvateoct mol OPCBOX 10 iso 
+addions mol K+ 0
+addions mol Cl- 0
+saveamberparm mol force_field/box_wo_kcl/draft_box.prmtop force_field/box_wo_kcl/draft_box.inpcrd
+savepdb mol force_field/box_wo_kcl/draft_box.pdb
+quit

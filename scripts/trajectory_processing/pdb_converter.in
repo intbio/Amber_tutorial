@@ -1,0 +1,6 @@
+parm force_field/box_kcl/solvated_box.prmtop
+trajin INITIAL_FILENAME.ncrst
+trajout INITIAL_FILENAME.pdb pdb
+strip :WAT,K+,Na+,Cl- parmout OUTPUT.prmtop
+autoimage
+run

@@ -1,0 +1,92 @@
+
+CPPTRAJ: Trajectory Analysis. V18.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 12/07/24 10:33:13
+| Available memory: 208.963 GB
+
+INPUT: Reading input from 'scripts/trajectory_processing/heat.in'
+  [parm force_field/box_kcl/solvated_box.prmtop]
+	Reading 'force_field/box_kcl/solvated_box.prmtop' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+Warning: Amber topology flag 'CMAP_COUNT' is unrecognized and will be skipped.
+Warning: Amber topology flag 'CMAP_RESOLUTION' is unrecognized and will be skipped.
+Warning: Amber topology flag 'CMAP_PARAMETER_01' is unrecognized and will be skipped.
+Warning: Amber topology flag 'CMAP_PARAMETER_02' is unrecognized and will be skipped.
+Warning: Amber topology flag 'CMAP_PARAMETER_03' is unrecognized and will be skipped.
+Warning: Amber topology flag 'CMAP_PARAMETER_04' is unrecognized and will be skipped.
+Warning: Amber topology flag 'CMAP_PARAMETER_05' is unrecognized and will be skipped.
+Warning: Amber topology flag 'CMAP_PARAMETER_06' is unrecognized and will be skipped.
+Warning: Amber topology flag 'CMAP_PARAMETER_07' is unrecognized and will be skipped.
+Warning: Amber topology flag 'CMAP_PARAMETER_08' is unrecognized and will be skipped.
+Warning: Amber topology flag 'CMAP_PARAMETER_09' is unrecognized and will be skipped.
+Warning: Amber topology flag 'CMAP_PARAMETER_10' is unrecognized and will be skipped.
+Warning: Amber topology flag 'CMAP_PARAMETER_11' is unrecognized and will be skipped.
+Warning: Amber topology flag 'CMAP_PARAMETER_12' is unrecognized and will be skipped.
+Warning: Amber topology flag 'CMAP_PARAMETER_13' is unrecognized and will be skipped.
+Warning: Amber topology flag 'CMAP_PARAMETER_14' is unrecognized and will be skipped.
+Warning: Amber topology flag 'CMAP_INDEX' is unrecognized and will be skipped.
+  [trajin minimization/heat/heat.ncrst]
+	Reading 'minimization/heat/heat.ncrst' as Amber NC Restart
+  [trajout minimization/heat/heat.pdb pdb]
+	Writing 'minimization/heat/heat.pdb' as PDB
+  [strip :WAT,K+,Na+,Cl- parmout trajectory/heat/heat.prmtop]
+    STRIP: Stripping atoms in mask [:WAT,K+,Na+,Cl-]
+	Stripped topology will be output with name 'trajectory/heat/heat.prmtop'
+  [autoimage]
+    AUTOIMAGE: To box center based on center of mass, anchor is first molecule.
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: solvated_box.prmtop, 384974 atoms, 91606 res, box: Trunc. Oct., 90348 mol, 89850 solvent
+
+INPUT TRAJECTORIES (1 total):
+ 0: 'heat.ncrst' is a NetCDF AMBER restart file with coordinates, velocities, time, box, Parm solvated_box.prmtop (Trunc. Oct. box) (reading 1 of 1)
+  Coordinate processing will occur on 1 frames.
+
+OUTPUT TRAJECTORIES (1 total):
+  'heat.pdb' (1 frames) is a PDB file
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'solvated_box.prmtop' (2 actions):
+  0: [strip :WAT,K+,Na+,Cl- parmout trajectory/heat/heat.prmtop]
+	Stripping 359888 atoms.
+	Stripped topology: 25086 atoms, 1268 res, box: Trunc. Oct., 10 mol
+	Writing topology 0 (solvated_box.prmtop) to 'trajectory/heat/heat.prmtop' with format Amber Topology
+  1: [autoimage]
+	Original box is truncated octahedron, turning on 'familiar'.
+	Using first molecule as anchor.
+	9 molecules are fixed to anchor: 2 3 4 5 6 7 8 9 10
+	0 molecules are mobile.
+Warning: No PDB space group specified.
+.....................................................
+ACTIVE OUTPUT TRAJECTORIES (1):
+  minimization/heat/heat.pdb (coordinates, velocities, time, box)
+----- heat.ncrst (1-1, 1) -----
+100% Complete.
+
+Read 1 frames and processed 1 frames.
+TIME: Avg. throughput= 1.6159 frames / second.
+
+ACTION OUTPUT:
+TIME: Analyses took 0.0000 seconds.
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 0.6189 s ( 98.79%)
+TIME:		Action Post        : 0.0000 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.0000 s (  0.00%)
+TIME:		Other              : 0.0076 s (  0.01%)
+TIME:	Run Total 0.6265 s
+---------- RUN END ---------------------------------------------------
+TIME: Total execution time: 1.3141 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
